@@ -32,6 +32,12 @@ const QuizCard: React.FC<QuizCardProps> = ({
     medium: "bg-moss-light text-moss-dark",
     hard: "bg-moss text-white"
   };
+  
+  const difficultyLabels = {
+    easy: "Facile",
+    medium: "Moyen",
+    hard: "Difficile"
+  };
 
   useEffect(() => {
     setAnimation("animate-enter");
@@ -71,7 +77,7 @@ const QuizCard: React.FC<QuizCardProps> = ({
     >
       <div className="flex justify-between items-center mb-6">
         <span className={cn("text-xs font-medium px-3 py-1 rounded-full", difficultyColor[question.difficulty])}>
-          {question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}
+          {difficultyLabels[question.difficulty]}
         </span>
         <div className="flex items-center gap-1 text-sm font-medium text-foreground/70">
           <Leaf className="w-4 h-4 text-primary" />
@@ -143,7 +149,7 @@ const QuizCard: React.FC<QuizCardProps> = ({
             className="w-full py-6" 
             onClick={nextQuestion}
           >
-            Next Question
+            Question Suivante
           </ButtonCustom>
         </motion.div>
       )}

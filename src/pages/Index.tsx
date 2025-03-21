@@ -35,8 +35,8 @@ const Index = () => {
     });
     
     toast({
-      title: "Quiz Started",
-      description: "Good luck!",
+      title: "Quiz Commencé",
+      description: "Bonne chance !",
     });
   };
   
@@ -54,13 +54,13 @@ const Index = () => {
     // Show toast for correct/incorrect answer
     if (isCorrect) {
       toast({
-        title: "Correct!",
-        description: "Well done!",
+        title: "Correct !",
+        description: "Bien joué !",
       });
     } else {
       toast({
         title: "Incorrect",
-        description: "Better luck on the next question!",
+        description: "Meilleure chance à la prochaine question !",
       });
     }
   };
@@ -82,8 +82,8 @@ const Index = () => {
       });
       
       toast({
-        title: "Quiz Complete!",
-        description: `You scored ${quizState.score} out of ${plantQuizQuestions.length}.`,
+        title: "Quiz Terminé !",
+        description: `Vous avez obtenu ${quizState.score} sur ${plantQuizQuestions.length}.`,
       });
     }
   };
@@ -127,7 +127,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Plant Knowledge Quiz
+              Quiz sur les Plantes
             </motion.h1>
             
             <motion.p 
@@ -136,8 +136,8 @@ const Index = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              Test your knowledge about the fascinating world of plants with this 
-              10-question quiz. Are you ready to grow your botanical wisdom?
+              Testez vos connaissances sur le monde fascinant des plantes avec ce 
+              quiz de 10 questions. Êtes-vous prêt à développer votre sagesse botanique ?
             </motion.p>
             
             <motion.div
@@ -150,7 +150,7 @@ const Index = () => {
                 className="w-full py-6" 
                 onClick={startQuiz}
               >
-                Start Quiz
+                Commencer le Quiz
                 <ArrowRight className="w-5 h-5 ml-2" />
               </ButtonCustom>
             </motion.div>
@@ -161,8 +161,8 @@ const Index = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              Discover fascinating facts about plants and challenge yourself with 
-              questions ranging from basic to expert level.
+              Découvrez des faits fascinants sur les plantes et relevez le défi avec des 
+              questions allant du niveau débutant au niveau expert.
             </motion.p>
           </motion.div>
         ) : quizState.showResults ? (
@@ -197,7 +197,7 @@ const Index = () => {
             onClick={() => setQuizState({ ...quizState, quizStarted: false })}
             className="hover:underline focus:outline-none"
           >
-            Return to Home
+            Retour à l'Accueil
           </button>
         </motion.div>
       )}

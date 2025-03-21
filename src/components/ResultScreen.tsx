@@ -16,10 +16,10 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, answers, restartQuiz
   const percentage = Math.floor((score / totalQuestions) * 100);
   
   const getFeedback = () => {
-    if (percentage >= 90) return "Plant Master!";
-    if (percentage >= 70) return "Plant Enthusiast!";
-    if (percentage >= 50) return "Growing Knowledge!";
-    return "Beginner Gardener";
+    if (percentage >= 90) return "Maître des Plantes !";
+    if (percentage >= 70) return "Passionné de Plantes !";
+    if (percentage >= 50) return "Connaissances en Croissance !";
+    return "Jardinier Débutant";
   };
   
   const getColor = () => {
@@ -53,10 +53,10 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, answers, restartQuiz
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        <h2 className="text-xl font-medium mb-2">Quiz Complete!</h2>
+        <h2 className="text-xl font-medium mb-2">Quiz Terminé !</h2>
         <p className={`text-3xl font-bold mb-2 ${getColor()}`}>{getFeedback()}</p>
         <p className="text-muted-foreground">
-          You scored <span className="font-medium">{score} out of {totalQuestions}</span>
+          Vous avez obtenu <span className="font-medium">{score} sur {totalQuestions}</span>
         </p>
       </motion.div>
       
@@ -69,7 +69,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, answers, restartQuiz
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-2">
             <BarChart3 className="w-4 h-4 text-primary" />
-            <span className="font-medium">Score Breakdown</span>
+            <span className="font-medium">Détails du Score</span>
           </div>
           <span className="text-lg font-bold">{percentage}%</span>
         </div>
@@ -84,7 +84,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, answers, restartQuiz
         </div>
         
         <div className="flex justify-between text-sm text-muted-foreground">
-          <span>Beginner</span>
+          <span>Débutant</span>
           <span>Expert</span>
         </div>
       </motion.div>
@@ -100,7 +100,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, answers, restartQuiz
           onClick={restartQuiz}
         >
           <Leaf className="w-5 h-5 mr-2" />
-          Retry Quiz
+          Recommencer le Quiz
         </ButtonCustom>
       </motion.div>
     </motion.div>
